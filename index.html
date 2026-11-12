@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TransAfrica – Réservez vos trajets</title>
+  <meta name="description" content="Réservez vos places en bus et minibus et envoyez vos colis au Sénégal.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Voyagez et expédiez partout au Sénégal</h1>
+      <p>Comparez les départs des agences et trouvez votre place.</p>
+    </section>
+
+    <form id="search-form" class="card" novalidate>
+      <div class="field">
+        <label for="origin">Départ</label>
+        <select id="origin"><option value="">Toutes les villes</option></select>
+      </div>
+      <div class="field">
+        <label for="destination">Arrivée</label>
+        <select id="destination"><option value="">Toutes les villes</option></select>
+      </div>
+      <div class="field">
+        <label for="date">Date</label>
+        <input type="date" id="date">
+      </div>
+      <button class="btn" id="search-btn" type="submit">Rechercher</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    <ul id="results" class="results"></ul>
+  </main>
+
+  <footer class="wrap footer"><small>TransAfrica · version de test</small></footer>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>
