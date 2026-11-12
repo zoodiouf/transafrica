@@ -1,4 +1,4 @@
 // Seule la clé PUBLIQUE (publishable / anon) peut figurer ici.
 // Ne mettez JAMAIS la clé secret / service_role.
-export const SUPABASE_URL = "COLLEZ_ICI_L_ADRESSE_DU_PROJET";
-export const SUPABASE_KEY = "COLLEZ_ICI_LA_CLE_PUBLIQUE";
+export const SUPABASE_URL = "https://hmtfpsyolcucoybfhycc.supabase.co";
+export const SUPABASE_KEY = "sb_publishable_9dADwQGdbcaxAKCj0KiXXA_CjH76u3l";
