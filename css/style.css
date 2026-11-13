@@ -72,3 +72,13 @@ select, input {
 .badge.full { background: #FEE4E2; color: #7A271A; }
 
 .footer { color: var(--muted); text-align: center; }
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+}
