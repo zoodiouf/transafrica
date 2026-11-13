@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Créer un compte – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Créer un compte</h1>
+
+    <form id="signup-form" class="card" novalidate>
+      <div class="field">
+        <label for="full_name">Nom complet</label>
+        <input id="full_name" type="text" autocomplete="name" maxlength="100" required>
+      </div>
+      <div class="field">
+        <label for="phone">Téléphone</label>
+        <input id="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+221 77 000 00 00" required>
+      </div>
+      <div class="field">
+        <label for="email">Adresse e-mail</label>
+        <input id="email" type="email" autocomplete="email" maxlength="254" required>
+      </div>
+      <div class="field">
+        <label for="password">Mot de passe (8 caractères minimum)</label>
+        <input id="password" type="password" autocomplete="new-password" minlength="8" maxlength="72" required>
+      </div>
+      <div class="field">
+        <label for="password2">Confirmer le mot de passe</label>
+        <input id="password2" type="password" autocomplete="new-password" maxlength="72" required>
+      </div>
+      <button class="btn" id="submit-btn" type="submit">Créer mon compte</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    <p class="alt">Déjà un compte ? <a href="login.html">Se connecter</a></p>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
