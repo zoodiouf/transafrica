@@ -82,3 +82,40 @@ input[type="date"] {
   max-width: 100%;
   text-align: left;
 }
+.nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.nav a { color: #fff; text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+.nav-cta { background: var(--secondary); color: #1F2937 !important; padding: 0 14px; border-radius: 8px; }
+.nav-name { font-weight: 600; max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.linkbtn { background: none; border: 0; color: #fff; font: inherit; font-weight: 600; text-decoration: underline; min-height: 44px; padding: 0 4px; cursor: pointer; }
+.linkbtn.dark { color: var(--primary); }
+.linkbtn:disabled { opacity: .6; cursor: not-allowed; }
+.bell { position: relative; font-size: 1.25rem; min-width: 44px; justify-content: center; }
+.bell-count {
+  position: absolute; top: 2px; right: 0; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 999px; background: var(--danger); color: #fff;
+  font-size: .75rem; font-weight: 700; line-height: 20px; text-align: center;
+}
+.banner { background: #FEE4E2; color: #7A271A; padding: 10px 16px; text-align: center; font-weight: 600; }
+
+.page-title { font-size: 1.5rem; margin: 8px 0 16px; }
+.page-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.page-head .page-title { margin: 8px 0; }
+.btn-small { width: auto; min-height: 44px; padding: 8px 14px; font-size: .9375rem; }
+.alt { text-align: center; margin: 16px 0; }
+.alt a { color: var(--primary); font-weight: 600; }
+
+.notifs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.notif {
+  background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--border);
+  border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px;
+}
+.notif.unread { border-left-color: var(--primary); background: #F0FAF5; }
+.notif-head { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: .875rem; }
+.notif-type { font-weight: 600; }
+.notif-title { font-weight: 700; }
+.notif-msg { overflow-wrap: anywhere; }
+
+input[type="date"] {
+  -webkit-appearance: none; appearance: none; display: block;
+  width: 100%; min-width: 0; max-width: 100%; text-align: left;
+}
