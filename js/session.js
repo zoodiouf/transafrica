@@ -65,7 +65,7 @@ async function render(session) {
     location.href = "index.html";
   });
 
-  nav.append(bell, name, out);
+    nav.append(link("bookings.html", "Réservations"), bell, name, out);
   countEl = count;
 
   const { data: p } = await supabase
