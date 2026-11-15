@@ -2,7 +2,7 @@ import { supabase } from "./supabase.js";
 
 const statusEl = document.getElementById("status");
 const submitBtn = document.getElementById("submit-btn");
-const ALLOWED_NEXT = ["index.html", "notifications.html"];
+const NEXT_RE = /^(index|notifications|bookings)\.html$|^(trip|booking|tickets)\.html\?id=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 function show(message, kind) {
   if (!statusEl) return;
@@ -13,8 +13,9 @@ function show(message, kind) {
 
 function nextPage() {
   const n = new URLSearchParams(location.search).get("next");
-  return ALLOWED_NEXT.includes(n) ? n : "index.html";
+  return n && NEXT_RE.test(n) ? n : "index.html";
 }
+
 
 function messageFor(error) {
   switch (error && error.code) {
