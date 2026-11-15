@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choisir mes places – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="index.html">← Retour à la recherche</a>
+    <h1 class="page-title">Choisir mes places</h1>
+
+    <div id="trip-info" class="card trip-info" hidden></div>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <section id="step-seats" hidden>
+      <div class="card">
+        <h2 class="h2">Plan du véhicule</h2>
+        <p class="legend">
+          <span class="chip free">Libre</span>
+          <span class="chip picked">Choisi</span>
+          <span class="chip taken">Occupé</span>
+        </p>
+        <div id="seatmap" class="seatmap"></div>
+        <p id="summary" class="summary"></p>
+        <button id="to-form" class="btn" type="button" disabled>Continuer</button>
+      </div>
+    </section>
+
+    <section id="step-form" hidden>
+      <form id="booking-form" class="card" novalidate>
+        <h2 class="h2">Passagers</h2>
+        <div id="passengers"></div>
+
+        <h2 class="h2">Contact</h2>
+        <div class="field">
+          <label for="c-name">Nom du contact</label>
+          <input id="c-name" type="text" maxlength="100" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="c-phone">Téléphone</label>
+          <input id="c-phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="+221 77 000 00 00">
+        </div>
+        <div class="field">
+          <label for="c-email">E-mail (facultatif)</label>
+          <input id="c-email" type="email" maxlength="254" autocomplete="email">
+        </div>
+
+        <p class="note">Chaque passager occupe un siège et paie le tarif plein. Vos places sont bloquées quelques minutes, le temps du paiement.</p>
+        <div class="stack">
+          <button class="btn" id="submit-btn" type="submit">Réserver mes places</button>
+          <button class="btn btn-secondary" id="back-btn" type="button">Modifier mes places</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/trip.js"></script>
+</body>
+</html>
