@@ -100,7 +100,10 @@ async function init() {
   show("", "");
   await loadQrLibrary();
   listEl.replaceChildren(...data.map(card));
-  warnEl.hidden = false;
+    warnEl.hidden = false;
+  const lug = el("a", "btn btn-secondary btn-link", "Déclarer mes bagages");
+  lug.href = "luggage.html?id=" + id;
+  warnEl.after(lug);
 }
 
 init();
