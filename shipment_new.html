@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Envoyer un colis – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="index.html">← Accueil</a>
+    <h1 class="page-title">Envoyer un colis</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <form id="shipment-form" class="card" novalidate>
+      <h2 class="h2">Trajet</h2>
+      <div class="field">
+        <label for="agency">Agence</label>
+        <select id="agency"><option value="">Choisir une agence</option></select>
+      </div>
+      <div class="field">
+        <label for="origin">Ville de départ</label>
+        <select id="origin"><option value="">Choisir</option></select>
+      </div>
+      <div class="field">
+        <label for="destination">Ville d'arrivée</label>
+        <select id="destination"><option value="">Choisir</option></select>
+      </div>
+
+      <h2 class="h2">Colis</h2>
+      <div class="field">
+        <label for="category">Catégorie</label>
+        <select id="category"></select>
+      </div>
+      <div class="field">
+        <label for="weight">Poids (kg, 50 maximum)</label>
+        <input id="weight" type="text" inputmode="decimal" maxlength="6" placeholder="Ex. 3,5">
+      </div>
+      <div class="field">
+        <label for="desc">Contenu</label>
+        <input id="desc" type="text" maxlength="200" placeholder="Ex. Vêtements">
+      </div>
+      <div class="field">
+        <label for="value">Valeur déclarée en FCFA (obligatoire pour un objet de valeur)</label>
+        <input id="value" type="text" inputmode="numeric" maxlength="10">
+      </div>
+      <p id="quote" class="quote" aria-live="polite">Choisissez une agence et un poids pour voir le prix.</p>
+
+      <h2 class="h2">Expéditeur</h2>
+      <div class="field">
+        <label for="s-name">Nom</label>
+        <input id="s-name" type="text" maxlength="100" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="s-phone">Téléphone</label>
+        <input id="s-phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel">
+      </div>
+
+      <h2 class="h2">Destinataire</h2>
+      <div class="field">
+        <label for="r-name">Nom</label>
+        <input id="r-name" type="text" maxlength="100" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="r-phone">Téléphone</label>
+        <input id="r-phone" type="tel" inputmode="tel" maxlength="30" autocomplete="off" placeholder="+221 77 000 00 00">
+      </div>
+
+      <p class="note">Le colis est à déposer à l'agence, où vous réglez le prix. Ne confiez aucun produit interdit ou dangereux.</p>
+      <button class="btn" id="submit-btn" type="submit">Enregistrer l'envoi</button>
+    </form>
+
+    <div id="done" class="card stack" hidden></div>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/shipment_new.js"></script>
+</body>
+</html>
