@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mes bagages – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="bookings.html">← Mes réservations</a>
+    <h1 class="page-title">Mes bagages</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <div id="trip-info" class="card trip-info" hidden></div>
+    <div id="summary" class="card" hidden></div>
+    <ul id="list" class="plain results"></ul>
+
+    <form id="luggage-form" class="card" novalidate hidden>
+      <h2 class="h2">Ajouter un bagage</h2>
+      <div class="field">
+        <label for="type">Type</label>
+        <select id="type"></select>
+      </div>
+      <div class="field">
+        <label for="weight">Poids estimé (kg)</label>
+        <input id="weight" type="text" inputmode="decimal" maxlength="6" placeholder="Ex. 18,5">
+      </div>
+      <div class="field">
+        <label for="desc">Description (facultatif)</label>
+        <input id="desc" type="text" maxlength="200" placeholder="Ex. Valise bleue">
+      </div>
+      <p class="note">Le poids sera vérifié à l'agence : le supplément définitif est calculé après la pesée.</p>
+      <button class="btn" id="submit-btn" type="submit">Ajouter</button>
+    </form>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/luggage.js"></script>
+</body>
+</html>
