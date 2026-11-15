@@ -65,6 +65,12 @@ function tripCard(t) {
   }
   li.append(el("div", "meta", "Bagage gratuit : " + t.free_luggage_kg + " kg par billet"));
   li.append(seatsBadge(Number(t.seats_free)));
+
+  if (Number(t.seats_free) > 0) {
+    const a = el("a", "btn btn-link", "Choisir mes places");
+    a.href = "trip.html?id=" + encodeURIComponent(t.trip_id);
+    li.append(a);
+  }
   return li;
 }
 
