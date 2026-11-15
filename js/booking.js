@@ -151,8 +151,9 @@ function render(b, seats) {
     content.append(infoBlock("Cette réservation a expiré. Vos places ont été libérées.", "",
       [linkTo("index.html", "Rechercher un autre départ", "btn btn-link")]));
   } else if (b.status === "CONFIRMED") {
-    content.append(infoBlock("Réservation confirmée. Vos billets sont prêts.", "ok-text",
-      [linkTo("tickets.html?id=" + id, "Voir mes billets", "btn btn-link")]));
+        content.append(infoBlock("Réservation confirmée. Vos billets sont prêts.", "ok-text",
+      [linkTo("tickets.html?id=" + id, "Voir mes billets", "btn btn-link"),
+       linkTo("luggage.html?id=" + id, "Déclarer mes bagages", "btn btn-secondary btn-link")]));
   } else if (b.status === "CANCELLED") {
     content.append(infoBlock("Cette réservation est annulée.", "", []));
   } else {
