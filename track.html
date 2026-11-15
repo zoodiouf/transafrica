@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suivre un colis – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="index.html">← Accueil</a>
+    <h1 class="page-title">Suivre un colis</h1>
+
+    <form id="track-form" class="card" novalidate>
+      <div class="field">
+        <label for="number">Numéro de suivi</label>
+        <input id="number" type="text" maxlength="20" autocomplete="off" autocapitalize="characters" placeholder="CL-XXXXXXXXXX">
+      </div>
+      <div class="field">
+        <label for="phone">Téléphone de l'expéditeur ou du destinataire</label>
+        <input id="phone" type="tel" inputmode="tel" maxlength="30" autocomplete="off" placeholder="+221 77 000 00 00">
+      </div>
+      <button class="btn" id="submit-btn" type="submit">Suivre</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    <div id="result" hidden></div>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/track.js"></script>
+</body>
+</html>
