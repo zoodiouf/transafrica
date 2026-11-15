@@ -158,4 +158,15 @@ a.btn { display: flex; align-items: center; justify-content: center; text-decora
 .ticket-name { font-weight: 700; }
 .ticket-code { font-family: ui-monospace, Menlo, monospace; font-size: 1.125rem; font-weight: 700; letter-spacing: 1px; overflow-wrap: anywhere; }
 .qr { width: 100%; max-width: 240px; height: auto; image-rendering: pixelated; margin: 8px auto; }
+.quicklinks { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.quicklinks a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+  background: #fff; color: var(--primary); font-weight: 600; text-decoration: none;
+  border: 2px solid var(--primary); border-radius: 999px;
+}
+.quote { font-weight: 700; color: var(--primary); margin: 4px 0 16px; }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 16px; border-left: 3px solid var(--primary); display: grid; gap: 16px; }
+.tl-item { position: relative; padding-left: 12px; }
+.tl-item::before { content: ""; position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
+.tl-status { font-weight: 700; }
 
