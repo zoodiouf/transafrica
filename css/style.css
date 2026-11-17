@@ -169,4 +169,18 @@ a.btn { display: flex; align-items: center; justify-content: center; text-decora
 .tl-item { position: relative; padding-left: 12px; }
 .tl-item::before { content: ""; position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
 .tl-status { font-weight: 700; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.stat-value { font-size: 1.25rem; font-weight: 700; color: var(--primary); overflow-wrap: anywhere; }
+.stat-label { color: var(--muted); font-size: .875rem; }
+
+.scan-result { border-radius: 12px; padding: 16px; text-align: center; border: 3px solid var(--border); background: #fff; margin: 16px 0; display: grid; gap: 4px; justify-items: center; }
+.scan-result.ok { border-color: #12B76A; background: #ECFDF3; }
+.scan-result.ko { border-color: var(--danger); background: #FEF3F2; }
+.scan-icon { font-size: 3rem; line-height: 1; }
+.scan-msg { font-size: 1.25rem; font-weight: 700; }
+
+.pax-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.seatnum { flex: none; min-width: 44px; height: 44px; padding: 0 6px; border-radius: 8px; background: var(--primary); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.pax-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 
