@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espace agence – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Espace agence</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <section id="stats" class="stats" hidden></section>
+
+    <nav class="quicklinks" aria-label="Actions">
+      <a href="scan.html">✅ Scanner un billet</a>
+    </nav>
+
+    <h2 class="h2">Départs récents et à venir</h2>
+    <ul id="list" class="plain results"></ul>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/agency.js"></script>
+</body>
+</html>
