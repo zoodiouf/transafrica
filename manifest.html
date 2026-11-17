@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passagers et chargement – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="index.html" id="back">← Retour</a>
+    <h1 class="page-title">Passagers et chargement</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <div id="trip-info" class="card trip-info" hidden></div>
+    <div id="trip-actions" class="stack"></div>
+
+    <h2 class="h2">Passagers</h2>
+    <p id="pax-summary" class="note"></p>
+    <ul id="pax" class="plain"></ul>
+
+    <h2 class="h2">Bagages</h2>
+    <ul id="luggage" class="plain results"></ul>
+
+    <h2 class="h2">Colis sur ce départ</h2>
+    <ul id="shipments" class="plain results"></ul>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/manifest.js"></script>
+</body>
+</html>
