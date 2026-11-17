@@ -1,6 +1,11 @@
 import { supabase } from "./supabase.js";
 
 const nav = document.getElementById("nav");
+const PRO_LINKS = {
+  AGENCY_ADMIN: { href: "agency.html", text: "Espace agence" },
+  AGENCY_AGENT: { href: "agency.html", text: "Espace agence" },
+  DRIVER: { href: "driver.html", text: "Espace chauffeur" }
+};
 let timer = null;
 let token = 0;
 let countEl = null;
@@ -65,15 +70,17 @@ async function render(session) {
     location.href = "index.html";
   });
 
-    nav.append(link("bookings.html", "Réservations"), bell, name, out);
+  nav.append(link("bookings.html", "Réservations"), bell, name, out);
   countEl = count;
 
   const { data: p } = await supabase
-    .from("profiles").select("full_name, is_suspended")
+    .from("profiles").select("full_name, is_suspended, role")
     .eq("id", session.user.id).maybeSingle();
   if (my !== token) return;
   if (p && p.full_name) name.textContent = p.full_name.trim().split(/\s+/)[0];
   if (p && p.is_suspended) suspendedBanner();
+  const space = p && !p.is_suspended ? PRO_LINKS[p.role] : null;
+  if (space) nav.prepend(link(space.href, space.text));
 
   await refreshCount();
   if (my !== token) return;
