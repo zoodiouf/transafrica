@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valider un billet – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Valider un billet</h1>
+
+    <form id="scan-form" class="card" novalidate>
+      <div class="field">
+        <label for="code">Code du billet</label>
+        <input id="code" type="text" maxlength="100" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="TK-XXXXXXXXXX">
+      </div>
+      <button class="btn" id="submit-btn" type="submit">Valider le billet</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    <div id="result" aria-live="polite" hidden></div>
+
+    <h2 class="h2">Dernières vérifications</h2>
+    <ul id="history" class="plain"></ul>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/scan.js"></script>
+</body>
+</html>
