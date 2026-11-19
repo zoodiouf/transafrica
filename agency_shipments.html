@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colis de l'agence – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="agency.html">← Espace agence</a>
+    <div class="page-head">
+      <h1 class="page-title">Colis de l'agence</h1>
+      <a class="btn btn-small btn-link" href="agency_shipment_new.html">Nouveau colis</a>
+    </div>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    <div id="code-box" class="card stack" hidden></div>
+
+    <div class="card filters">
+      <div class="field">
+        <label for="filter">Afficher</label>
+        <select id="filter"></select>
+      </div>
+      <div class="field">
+        <label for="search">Rechercher (numéro, nom ou téléphone)</label>
+        <input id="search" type="text" maxlength="50" autocomplete="off">
+      </div>
+    </div>
+
+    <p id="count" class="note"></p>
+    <ul id="list" class="plain results"></ul>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/agency_shipments.js"></script>
+</body>
+</html>
