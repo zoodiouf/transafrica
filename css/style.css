@@ -183,4 +183,7 @@ a.btn { display: flex; align-items: center; justify-content: center; text-decora
 .pax-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
 .seatnum { flex: none; min-width: 44px; height: 44px; padding: 0 6px; border-radius: 8px; background: var(--primary); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 .pax-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.filters { display: grid; gap: 12px; margin-bottom: 8px; }
+.inline-form { display: grid; gap: 8px; margin-top: 4px; }
+.inline-form .note { margin: 0; }
 
