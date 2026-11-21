@@ -2,7 +2,7 @@ import { supabase } from "./supabase.js";
 
 const statusEl = document.getElementById("status");
 const submitBtn = document.getElementById("submit-btn");
-const NEXT_RE = /^(index|notifications|bookings|shipments|shipment_new|agency|driver|scan|agency_shipments|agency_shipment_new)\.html$|^(trip|booking|tickets|luggage|manifest)\.html\?id=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+const NEXT_RE = /^(index|notifications|bookings|shipments|shipment_new|agency|driver|scan|agency_shipments|agency_shipment_new|agency_vehicles|agency_drivers|agency_routes|agency_trips|agency_rates|agency_team|join)\.html$|^(trip|booking|tickets|luggage|manifest)\.html\?id=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 function show(message, kind) {
   if (!statusEl) return;
