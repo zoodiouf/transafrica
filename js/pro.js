@@ -1,5 +1,5 @@
 import { supabase } from "./supabase.js";
-import { el, fmtDate } from "./ui.js";
+import { el, fmtDate, userMessage } from "./ui.js";
 
 export const TRIP_STATUS = {
   SCHEDULED: "Programmé", BOARDING: "Embarquement", DEPARTED: "Parti",
@@ -77,4 +77,63 @@ export function tripCard(t) {
   a.href = "manifest.html?id=" + encodeURIComponent(t.id);
   li.append(a);
   return li;
+}
+
+export function field(label, node) {
+  const wrap = el("div", "field");
+  if (!node.id) node.id = "f" + Math.random().toString(36).slice(2, 9);
+  const l = el("label", "", label);
+  l.htmlFor = node.id;
+  wrap.append(l, node);
+  return wrap;
+}
+
+export function input(type, opts = {}) {
+  const i = el("input");
+  i.type = type;
+  i.autocomplete = "off";
+  if (opts.max) i.maxLength = opts.max;
+  if (opts.mode) i.inputMode = opts.mode;
+  if (opts.placeholder) i.placeholder = opts.placeholder;
+  if (opts.value !== undefined && opts.value !== null) i.value = opts.value;
+  return i;
+}
+
+export function select(options, value) {
+  const s = el("select");
+  for (const [v, t] of options) s.append(new Option(t, v));
+  if (value !== undefined && value !== null) s.value = value;
+  return s;
+}
+
+export function fillSelect(s, options, placeholder) {
+  s.replaceChildren();
+  if (placeholder) s.append(new Option(placeholder, ""));
+  for (const [v, t] of options) s.append(new Option(t, v));
+}
+
+export function btn(label, cls, onClick) {
+  const b = el("button", "btn " + (cls || ""), label);
+  b.type = "button";
+  b.addEventListener("click", () => onClick(b));
+  return b;
+}
+
+// Heure de Dakar = UTC+0 toute l'année.
+export const toInputValue = (iso) => new Date(iso).toISOString().slice(0, 16);
+export function fromInputValue(v) {
+  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(v) ? new Date(v + ":00Z").toISOString() : null;
+}
+
+export function parseAmount(v) {
+  const s = String(v).replace(/\s/g, "");
+  return /^[0-9]{1,9}$/.test(s) ? Number(s) : null;
+}
+export function parseInteger(v, min, max) {
+  const n = parseAmount(v);
+  return n !== null && n >= min && n <= max ? n : null;
+}
+
+export function dbMessage(error, map) {
+  return (map && error && map[error.code]) || userMessage(error);
 }
