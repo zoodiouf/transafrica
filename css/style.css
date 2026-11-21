@@ -186,4 +186,12 @@ a.btn { display: flex; align-items: center; justify-content: center; text-decora
 .filters { display: grid; gap: 12px; margin-bottom: 8px; }
 .inline-form { display: grid; gap: 8px; margin-top: 4px; }
 .inline-form .note { margin: 0; }
+.card:empty, #extra:empty { display: none; }
+input[type="datetime-local"] {
+  -webkit-appearance: none; appearance: none; display: block;
+  width: 100%; min-width: 0; max-width: 100%; text-align: left;
+}
+.edit-panel { border-top: 1px solid var(--border); margin-top: 8px; padding-top: 12px; display: grid; gap: 8px; }
+.chk { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.chk input { width: auto; min-height: 0; }
 
