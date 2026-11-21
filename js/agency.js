@@ -62,7 +62,10 @@ async function init() {
   }
   show("Chargement…", "");
   const jobs = [loadTrips()];
-  if (ctx.profile.role === "AGENCY_ADMIN") jobs.push(loadStats());
+  if (ctx.profile.role === "AGENCY_ADMIN") {
+    document.getElementById("admin-links").hidden = false;
+    jobs.push(loadStats());
+  }
   await Promise.all(jobs);
 }
 
