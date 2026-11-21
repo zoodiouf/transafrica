@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoindre une agence – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Rejoindre une agence</h1>
+    <p class="note">Connectez-vous avec l'adresse e-mail à laquelle l'invitation a été envoyée, puis saisissez le code reçu de votre agence.</p>
+    <form id="join-form" class="card" novalidate>
+      <div class="field">
+        <label for="code">Code d'invitation</label>
+        <input id="code" type="text" maxlength="64" autocomplete="off" autocapitalize="off" spellcheck="false">
+      </div>
+      <button class="btn" id="submit-btn" type="submit">Rejoindre l'agence</button>
+    </form>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/join.js"></script>
+</body>
+</html>
