@@ -176,6 +176,15 @@ function card(s) {
   const id = s.id;
   const closed = CLOSED.includes(s.status);
 
+  if (paidSet.has(s.id)) {
+    li.append(el("div", "ok-text", "✅ Payé"));
+  } else if (!["CANCELLED", "RETURNED"].includes(s.status)) {
+    li.append(button("Encaisser " + fmtMoney(s.price), "", async (b) => {
+      if (!confirm("Confirmer l'encaissement de " + fmtMoney(s.price) + " en espèces ?")) return;
+      await run(b, supabase.rpc("record_shipment_payment", { p_shipment_id: s.id }), "Paiement enregistré.");
+    }));
+  }
+
   if (s.status === "CREATED") {
     li.append(button("Réceptionner le colis", "", (b) =>
       run(b, setStatus(id, "DROPPED_AT_AGENCY"), "Colis réceptionné à l'agence.")));
