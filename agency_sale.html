@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vente au guichet – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="agency.html">← Espace agence</a>
+    <h1 class="page-title">Vente au guichet</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <section id="step-trip" class="card">
+      <div class="field">
+        <label for="trip">Départ</label>
+        <select id="trip"><option value="">Choisir un départ</option></select>
+      </div>
+    </section>
+
+    <section id="step-seats" hidden>
+      <div class="card">
+        <h2 class="h2">Plan du véhicule</h2>
+        <p class="legend">
+          <span class="chip free">Libre</span>
+          <span class="chip picked">Choisi</span>
+          <span class="chip taken">Occupé</span>
+        </p>
+        <div id="seatmap" class="seatmap"></div>
+        <p id="summary" class="summary"></p>
+        <button id="to-form" class="btn" type="button" disabled>Continuer</button>
+      </div>
+    </section>
+
+    <section id="step-form" hidden>
+      <form id="sale-form" class="card" novalidate>
+        <h2 class="h2">Passagers</h2>
+        <div id="passengers"></div>
+
+        <h2 class="h2">Client</h2>
+        <div class="field">
+          <label for="c-name">Nom du client</label>
+          <input id="c-name" type="text" maxlength="100" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="c-phone">Téléphone</label>
+          <input id="c-phone" type="tel" inputmode="tel" maxlength="30" autocomplete="off" placeholder="+221 77 000 00 00">
+        </div>
+
+        <p id="total" class="quote"></p>
+        <div class="stack">
+          <button class="btn" id="submit-btn" type="submit">Encaisser en espèces et émettre les billets</button>
+          <button class="btn btn-secondary" id="back-btn" type="button">Modifier les places</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="done" class="card stack" hidden></section>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/agency_sale.js"></script>
+</body>
+</html>
