@@ -18,6 +18,7 @@ let shipments = [];
 let cityName = new Map();
 let tripDate = new Map();
 let upcoming = [];
+let paidSet = new Set();
 
 const show = (m, k) => showStatus(statusEl, m, k);
 const kg = (n) => String(Number(n)).replace(".", ",") + " kg";
