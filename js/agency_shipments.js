@@ -275,6 +275,11 @@ async function load() {
     return;
   }
   shipments = ship.data || [];
+  paidSet = new Set();
+  if (shipments.length) {
+    const paid = await supabase.rpc("get_shipments_paid", { p_ids: shipments.map((s) => s.id) });
+    if (!paid.error) for (const r of paid.data || []) paidSet.add(r.shipment_id);
+  }
   cityName = new Map(cities.data.map((c) => [c.id, c.name]));
   const routeKey = new Map(routes.data.map((r) => [r.id, r.origin_city_id + ">" + r.destination_city_id]));
   upcoming = (trips.data || []).map((t) => ({
