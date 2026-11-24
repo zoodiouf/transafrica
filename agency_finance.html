@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finances – TransAfrica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">TransAfrica</a>
+    <nav id="nav" class="nav" aria-label="Compte"></nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="agency.html">← Espace agence</a>
+    <h1 class="page-title">Finances</h1>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <h2 class="h2">Solde</h2>
+    <section id="balance" class="stats"></section>
+    <p class="note">Solde = ventes en ligne nettes − commissions dues sur les ventes au guichet (vous avez déjà encaissé ces espèces). Seuls les départs effectués et les colis livrés sont reversables.</p>
+    <div id="request-box" class="stack"></div>
+
+    <h2 class="h2">Mes reversements</h2>
+    <ul id="history" class="plain results"></ul>
+
+    <h2 class="h2">Caisse du jour (espèces)</h2>
+    <div class="card">
+      <div class="field">
+        <label for="day">Jour</label>
+        <input id="day" type="date">
+      </div>
+    </div>
+    <ul id="cash" class="plain results"></ul>
+  </main>
+
+  <script type="module" src="js/session.js"></script>
+  <script type="module" src="js/agency_finance.js"></script>
+</body>
+</html>
