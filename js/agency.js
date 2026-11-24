@@ -14,19 +14,21 @@ function tile(label, value) {
 }
 
 async function loadStats() {
-  const { data, error } = await supabase.rpc("get_stats");
-  if (error || !data) {
-    if (error) console.error(error.code || error.message);
+  const [stats, bal] = await Promise.all([supabase.rpc("get_stats"), supabase.rpc("get_agency_balance")]);
+  if (stats.error || !stats.data) {
+    if (stats.error) console.error(stats.error.code || stats.error.message);
     return;
   }
+  const data = stats.data;
   const n = (k) => Number(data[k]) || 0;
+  const balance = !bal.error && bal.data && bal.data[0] ? Number(bal.data[0].balance) || 0 : 0;
   statsEl.replaceChildren(
     tile("Chiffre d'affaires net (30 jours)", fmtMoney(n("revenue_gross"))),
     tile("Remboursé (30 jours)", fmtMoney(n("refunded_total"))),
     tile("Réservations confirmées", String(n("bookings_confirmed"))),
     tile("Billets validés", String(n("tickets_validated"))),
     tile("Colis créés", String(n("shipments_created"))),
-    tile("Reste à reverser", fmtMoney(n("payout_pending_net"))));
+    tile("Solde à reverser", fmtMoney(balance)));
   statsEl.hidden = false;
 }
 
