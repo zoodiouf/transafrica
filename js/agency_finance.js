@@ -56,10 +56,8 @@ async function loadBalance(hasOpenPayout) {
   const b = (data || [])[0] || {};
   const n = (k) => Number(b[k]) || 0;
   balanceEl.replaceChildren(
-    tile("Solde total", fmtMoney(n("balance"))),
-    tile("Reversable maintenant", fmtMoney(n("eligible_balance"))),
-    tile("Ventes en ligne nettes", fmtMoney(n("online_net"))),
-    tile("Commissions dues (guichet)", fmtMoney(n("cash_commission"))));
+    tile("Solde des ventes en ligne", fmtMoney(n("balance"))),
+    tile("Reversable maintenant", fmtMoney(n("eligible_balance"))));
 
   requestBox.replaceChildren();
   if (hasOpenPayout) {
